@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature convertor</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 20px;
+        }
+        h1{
+            text-decoration: underline;
+        }
+        #container{
+            background-color: aqua;
+            padding: 10px;
+            display: inline-block;
+            width: 500px;
+            height: 200px;
+        }
+        .inp{
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+            background-color: bisque;
+            margin: 10px;
+            font-size: 20px;
+        }
+        #temp{
+            text-align: center;
+        }
+        #feh{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Temperature Convertor</h1>
+        <div class="inp">
+            <label>Temperatue</label><br>
+            <input type="number" value="0" id="temp">
+        </div>
+
+        <div id="=" class="inp">
+            =
+        </div>
+        <div class="inp">
+            <label>Fahrenheit</label><br>
+            <input type="number" value='32' id='feh'>
+        </div>
+    </div>
+    <script>
+        var cel = document.getElementById('temp')
+        var fah = document.getElementById('feh')
+
+        cel.addEventListener('input', function(){
+            let c = this.value;
+            let f= (c * 9 / 5) + 32
+            fah.value= f
+        })
+        fah.addEventListener('input',function(){
+            let f= this.value;
+            let c= (f-32) * 5/9;
+            cel.value = c;
+        })
+
+    </script>
+</body>
+</html>
